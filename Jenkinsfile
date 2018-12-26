@@ -4,8 +4,17 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'package'
-                sh "docker build . -t tomcatwebapp:${env.BUILD_ID}"
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
             }
         }
     }
